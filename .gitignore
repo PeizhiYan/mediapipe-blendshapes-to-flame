@@ -5,3 +5,4 @@ models/FLAME2020/*.pkl
 models/face_landmarker_v2_with_blendshapes.task
 snapshot_fw.dump
 train.ipynb
+process_video.ipynb
