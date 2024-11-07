@@ -6,3 +6,4 @@ models/face_landmarker_v2_with_blendshapes.task
 snapshot_fw.dump
 train.ipynb
 process_video.ipynb
+gather_data.ipynb
