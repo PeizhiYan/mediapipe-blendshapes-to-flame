@@ -29,7 +29,7 @@ This code and the weights are provided "as-is" without any express or implied wa
 ## 🧸 How to Use
 
 ```
-from MP2FLAME import MP_2_FLAME
+from mp_2_flame import MP_2_FLAME
 mp2flame = MP_2_FLAME(mappings_path='./mappings')
 
 # blendshape_scores is the np.array object with shape [N,52],
