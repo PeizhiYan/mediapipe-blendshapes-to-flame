@@ -29,7 +29,7 @@ This code and the weights are provided "as-is" without any express or implied wa
 ## 🧸 How to Use
 
 ### Convert Mediapipe blendshapes to FLAME coefficients (expression, pose, and eye pose)
-```
+```python
 from mp_2_flame import MP_2_FLAME
 mp2flame = MP_2_FLAME(mappings_path='./mappings')
 
@@ -39,7 +39,7 @@ exp, pose, eye_pose = mp2flame.convert(blendshape_scores=blendshape_scores)
 ```
 
 ### Estimate Head Pose
-```
+```python
 from mp_2_flame import compute_head_pose_from_mp_landmarks_3d
 
 
