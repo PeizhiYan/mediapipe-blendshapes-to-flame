@@ -40,6 +40,34 @@ exp, pose, eye_pose = mp2flame.convert(blendshape_scores=blendshape_scores)
 
 ### Estimate Head Pose
 ```
+from mp_2_flame import compute_head_pose_from_mp_landmarks_3d
+
+
+# download model weights from: https://storage.googleapis.com/mediapipe-models/face_landmarker/face_landmarker/float16/1/face_landmarker.task
+base_options = python.BaseOptions(model_asset_path='face_landmarker.task')
+options = vision.FaceLandmarkerOptions(base_options=base_options,
+                                        output_face_blendshapes=True,
+                                        output_facial_transformation_matrixes=True,
+                                        num_faces=1)
+mediapipe_detector = vision.FaceLandmarker.create_from_options(options)
+
+# assume img is an RGB image
+img_h, img_w, img_c = img.shape
+image = mp.Image(image_format=mp.ImageFormat.SRGB, data=img) # convert numpy image to Mediapipe Image
+
+detection_result = mediapipe_detector.detect(image)
+
+if len(detection_result.face_blendshapes) > 0:
+    img_h = img.shape[0]
+    img_w = img.shape[1]
+    lmks_3d = detection_result.face_landmarks[0]
+    lmks_3d = np.array(list(map(lambda l: np.array([l.x, l.y, l.z]), lmks_3d))) # [478, 3]
+    lmks_3d[:, 0] = lmks_3d[:, 0] * img_w
+    lmks_3d[:, 1] = lmks_3d[:, 1] * img_h
+
+    # estimate the head pose
+    rotation_vec, translation_vec = compute_head_pose_from_mp_landmarks_3d(face_landmarks=lmks_3d, img_h=img_h, img_w=img_w)
+    print(rotation_vec, translation_vec)
 
 ```
 
