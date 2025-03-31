@@ -9,5 +9,3 @@ process_video.ipynb
 gather_data.ipynb
 FLAME_test_code.ipynb
 data/
-train_MLP.ipynb
-mlp.pth
