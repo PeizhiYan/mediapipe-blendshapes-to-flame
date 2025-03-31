@@ -1,8 +1,11 @@
 # Real-time Mediapipe-based FLAME Animation Driver
 
-Mapping **Mediapipe**'s 52 blendshapes to **FLAME**'s 50 expression coefficients and poses (jaw and eyeballs).
+Mapping **Mediapipe**'s 52 blendshapes to **FLAME**'s 100 expression coefficients and poses (jaw and eyeballs).
 
 This can be used to drive the FLAME mesh using Mediapipe in **real-time**.
+
+**Updates**:
+- March 21, 2025: Use all 100 FLAME expression coefficients, instead of the first 50 coefficients. 
 
 
 ## 🔑 Method
