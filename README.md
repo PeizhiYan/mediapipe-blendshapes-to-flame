@@ -7,6 +7,9 @@ This can be used to drive the FLAME mesh using Mediapipe in **real-time**.
 **Updates**:
 - March 21, 2025: Use all 100 FLAME expression coefficients, instead of the first 50 coefficients. 
 
+## Flame-Head-Tracker
+- This code is part of ```flame-head-tracker```: https://github.com/PeizhiYan/flame-head-tracker
+
 
 ## 🔑 Method
 
