@@ -4,6 +4,9 @@ Mapping **Mediapipe**'s 52 blendshapes to **FLAME**'s 100 expression coefficient
 
 This can be used to drive the FLAME mesh using Mediapipe in **real-time**.
 
+> [!NOTE]
+> I used FLAME 2020 in this project, to use my mappings, please ensure that you are using FLAME 2020.
+
 **Updates**:
 - March 21, 2025: Use all 100 FLAME expression coefficients, instead of the first 50 coefficients. 
 
