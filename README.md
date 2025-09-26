@@ -8,6 +8,7 @@ This can be used to drive the FLAME mesh using Mediapipe in **real-time**.
 > I used FLAME 2020 in this project, to use my mappings, please ensure that you are using FLAME 2020.
 
 **Updates**:
+- Sept. 26, 2025: Use flame-head-tracker v4.1 to prepare training data. Training data from PointAvatar dataset and INSTA dataset.
 - March 21, 2025: Use all 100 FLAME expression coefficients, instead of the first 50 coefficients. 
 
 ## Flame-Head-Tracker
@@ -80,9 +81,11 @@ if len(detection_result.face_blendshapes) > 0:
 
 ```
 
+## (Optional) Use Your Own Data to Compute the Mappings
 
-
-
+1) Prepare the monocular vidoes, and use ```flame-head-tracker v4.1``` (https://github.com/PeizhiYan/flame-head-tracker) track the videos.
+2) Use ```gather_data.ipynb``` to gather the tracked data and save to ```.npy``` files.
+3) Use ```compute_mappings.ipynb``` to compute the blandshape-to-flame mappings, and save the mappings to ```.npy``` files.
 
 
 
